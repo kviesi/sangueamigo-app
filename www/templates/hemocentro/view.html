@@ -1,0 +1,72 @@
+<ion-nav-bar></ion-nav-bar>
+<ion-nav-view>
+  <ion-view view-title="HemocentroView">
+    <ion-content>
+
+    <!-- Dados do hemocentro -->
+    <div></div>
+
+    <!-- Solicitacoes de doacao -->
+    <div class="item item-divider">
+      Solicitações de Doação
+    </div>
+    <div class="item item-text-wrap">
+        <ion-list>
+          <ion-item ng-repeat="donation in donations">
+            <p>{{donation.bloodType}}</p>
+            <p>{{donation.bags}}</p> 
+            <p>{{donation.personName}}</p> 
+            <p>{{donation.dateLimit}}</p>
+            <p>{{donation.cause}}</p>
+          </ion-item>
+        </ion-list>
+      </div>
+
+     <!-- Campanhas -->
+    <div class="item item-divider">
+      Próximas campanhas 
+    </div>
+     <div class="item item-text-wrap">
+        <ion-list>
+          <ion-item ng-repeat="campaign in campaigns">
+            <h2>{{campaign.date}}</h2>
+            <p>{{campaign.initTime}} até {{campaign.endTime}}</p>
+            <p>{{campaign.text}}</p>
+            <p>{{campaign.observations}}</p>
+          </ion-item>
+        </ion-list>
+      </div>
+
+    <div class="item item-divider">
+      Notas Rapidas 
+    </div>
+      <div class="item item-text-wrap">
+        <ion-list>
+          <ion-item ng-repeat="note in notes">
+            <span>
+              <h5>{{note.date}}</h5> 
+              <h2>{{note.short_description}}</h2>
+            </span>
+            </br><!-- Melhorar -->
+            <p>
+              {{note.text}}
+            </p>
+          </ion-item>
+        </ion-list>
+      </div>
+
+    <div class="item item-divider">
+      Estoque 
+    </div>
+      <div class="item item-text-wrap">
+        <ion-list>
+          <ion-item ng-repeat="hemocentro in hemocentros">
+            <p>{{hemocentro.bloodtype}}</p> 
+            <p>{{hemocentro.bags}}</p>
+          </ion-item>
+        </ion-list>
+      </div>
+
+    </ion-content>
+  </ion-view>
+</ion-nav-view>
